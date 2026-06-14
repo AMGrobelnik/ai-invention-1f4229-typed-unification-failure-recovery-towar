@@ -1,0 +1,391 @@
+{
+  "metadata": {
+    "evaluation_name": "typed_failure_detection_evaluation",
+    "description": "Annotation protocol, inter-rater agreement (Cohen's kappa), bootstrap 95% CIs, and stratified error analysis by failure type.",
+    "n_bootstrap": 1000,
+    "experiment_metadata": {
+      "method_name": "typed_failure_repair",
+      "description": "Typed proof failure detection + type-specific LLM repair vs ARGOS single-strategy baseline",
+      "llm_model": "anthropic/claude-haiku-4.5",
+      "total_cost_usd": 0.2311,
+      "bridge_axiom_library_size": 4,
+      "bridge_axiom_reuse_rate": 0.04,
+      "metrics": {
+        "ruletaker": {
+          "n": 100,
+          "typed_accuracy": 0.95,
+          "baseline_accuracy": 0.95,
+          "improvement_pct": 0.0,
+          "typed_hallucination_rate": 0.0833,
+          "baseline_hallucination_rate": 0.1292,
+          "hallucination_reduction_pct": 35.48,
+          "failure_distribution": {
+            "none": 85,
+            "TYPE_3_MISSING_FACT": 15
+          }
+        },
+        "clutrr": {
+          "n": 100,
+          "typed_accuracy": 0.0,
+          "baseline_accuracy": 0.0,
+          "improvement_pct": 0.0,
+          "typed_hallucination_rate": 0.3867,
+          "baseline_hallucination_rate": 0.5711,
+          "hallucination_reduction_pct": 32.3,
+          "failure_distribution": {
+            "TYPE_1_LEXICAL_MISMATCH": 4,
+            "TYPE_3_MISSING_FACT": 60,
+            "none": 36
+          }
+        }
+      },
+      "failure_type_taxonomy": {
+        "TYPE_1_LEXICAL_MISMATCH": "Predicate absent from KB but similar one exists",
+        "TYPE_2_ARITY_MISMATCH": "Predicate exists but called with wrong arity",
+        "TYPE_3_MISSING_FACT": "Proof search exhausted — missing ground fact",
+        "TYPE_4_CATEGORY_VIOLATION": "Type-error exception in proof",
+        "TYPE_5_SCOPE_CONFLICT": "Quantifier scope conflict (heuristic)"
+      }
+    },
+    "failure_type_taxonomy": {
+      "TYPE_1_LEXICAL_MISMATCH": "Predicate absent from KB but similar one exists",
+      "TYPE_2_ARITY_MISMATCH": "Predicate exists but called with wrong arity",
+      "TYPE_3_MISSING_FACT": "Proof search exhausted — missing ground fact",
+      "TYPE_4_CATEGORY_VIOLATION": "Type-error exception in proof",
+      "TYPE_5_SCOPE_CONFLICT": "Quantifier scope conflict (heuristic)"
+    },
+    "annotation_summary": {
+      "n_annotated": 79,
+      "annotator_a": "Prolog-exception automated classifier",
+      "annotator_b": "Text-feature heuristic (clause count + kinship keyword matching)",
+      "cohen_kappa": 0.1319,
+      "raw_agreement_pct": 0.6203,
+      "kappa_interpretation": "slight",
+      "failure_type_distribution": {
+        "none": 121,
+        "TYPE_3_MISSING_FACT": 75,
+        "TYPE_1_LEXICAL_MISMATCH": 4
+      }
+    },
+    "bootstrap_summary": {
+      "ruletaker_typed_accuracy": {
+        "mean": 0.95,
+        "std": 0.2179,
+        "ci_95": [0.9, 0.99]
+      },
+      "ruletaker_baseline_accuracy": {
+        "mean": 0.95,
+        "std": 0.2179,
+        "ci_95": [0.9, 0.99]
+      },
+      "ruletaker_typed_hallucination": {
+        "mean": 0.0833,
+        "std": 0.1708,
+        "ci_95": [0.0517, 0.1167]
+      },
+      "ruletaker_baseline_hallucination": {
+        "mean": 0.1292,
+        "std": 0.1835,
+        "ci_95": [0.095, 0.165]
+      },
+      "ruletaker_hallucination_reduction": {
+        "mean": 0.0458,
+        "std": 0.1102,
+        "ci_95": [0.0258, 0.0683]
+      },
+      "clutrr_typed_accuracy": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_95": [0.0, 0.0]
+      },
+      "clutrr_baseline_accuracy": {
+        "mean": 0.0,
+        "std": 0.0,
+        "ci_95": [0.0, 0.0]
+      },
+      "clutrr_typed_hallucination": {
+        "mean": 0.3867,
+        "std": 0.1686,
+        "ci_95": [0.3538, 0.421]
+      },
+      "clutrr_baseline_hallucination": {
+        "mean": 0.5711,
+        "std": 0.1215,
+        "ci_95": [0.5462, 0.5938]
+      },
+      "clutrr_hallucination_reduction": {
+        "mean": 0.1845,
+        "std": 0.0562,
+        "ci_95": [0.1732, 0.1951]
+      }
+    },
+    "stratified_analysis": {
+      "TYPE_1_LEXICAL_MISMATCH": {
+        "clutrr": {
+          "n": 4,
+          "typed_accuracy": 0.0,
+          "baseline_accuracy": 0.0,
+          "typed_hallucination": 0.25,
+          "baseline_hallucination": 0.5,
+          "hallucination_reduction": 0.25,
+          "typed_wins": 0,
+          "baseline_wins": 0,
+          "ties": 4
+        }
+      },
+      "TYPE_3_MISSING_FACT": {
+        "ruletaker": {
+          "n": 15,
+          "typed_accuracy": 0.6667,
+          "baseline_accuracy": 0.6667,
+          "typed_hallucination": 0.0,
+          "baseline_hallucination": 0.3055,
+          "hallucination_reduction": 0.3055,
+          "typed_wins": 5,
+          "baseline_wins": 5,
+          "ties": 5
+        },
+        "clutrr": {
+          "n": 60,
+          "typed_accuracy": 0.0,
+          "baseline_accuracy": 0.0,
+          "typed_hallucination": 0.4278,
+          "baseline_hallucination": 0.6185,
+          "hallucination_reduction": 0.1907,
+          "typed_wins": 0,
+          "baseline_wins": 0,
+          "ties": 60
+        }
+      },
+      "none": {
+        "ruletaker": {
+          "n": 85,
+          "typed_accuracy": 1.0,
+          "baseline_accuracy": 1.0,
+          "typed_hallucination": 0.098,
+          "baseline_hallucination": 0.098,
+          "hallucination_reduction": 0.0,
+          "typed_wins": 0,
+          "baseline_wins": 0,
+          "ties": 85
+        },
+        "clutrr": {
+          "n": 36,
+          "typed_accuracy": 0.0,
+          "baseline_accuracy": 0.0,
+          "typed_hallucination": 0.3333,
+          "baseline_hallucination": 0.5,
+          "hallucination_reduction": 0.1667,
+          "typed_wins": 0,
+          "baseline_wins": 0,
+          "ties": 36
+        }
+      }
+    }
+  },
+  "metrics_agg": {
+    "cohen_kappa": 0.131868,
+    "annotator_agreement_pct": 0.620253,
+    "n_failure_examples_annotated": 7.0,
+    "n_total_examples": 10.0,
+    "ruletaker_typed_accuracy_mean": 0.95,
+    "ruletaker_baseline_accuracy_mean": 0.95,
+    "ruletaker_typed_hallucination_mean": 0.0833,
+    "ruletaker_baseline_hallucination_mean": 0.1292,
+    "ruletaker_hallucination_reduction_mean": 0.0458,
+    "clutrr_typed_accuracy_mean": 0.0,
+    "clutrr_baseline_accuracy_mean": 0.0,
+    "clutrr_typed_hallucination_mean": 0.3867,
+    "clutrr_baseline_hallucination_mean": 0.5711,
+    "clutrr_hallucination_reduction_mean": 0.1845,
+    "strat_T33_ruletaker_n": 2.0,
+    "strat_T33_ruletaker_typed_acc": 0.667,
+    "strat_T33_clutrr_n": 2.0,
+    "strat_T33_clutrr_typed_acc": 0.0,
+    "dist_none_count": 6.0,
+    "dist_TYPE_3_MISSING_FACT_count": 4.0,
+    "dist_TYPE_1_LEXICAL_MISMATCH_count": 1.0
+  },
+  "datasets": [
+    {
+      "dataset": "ruletaker",
+      "examples": [
+        {
+          "input": "Theory: Lion likes cow. Cat likes bird. If X likes Y and Y is cold then X is cold. Cow is cold.\nQuery: Is Lion cold?",
+          "output": "True",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "predict_annotator_b": "none",
+          "metadata_dataset": "ruletaker",
+          "metadata_goal": "is_cold(lion)",
+          "metadata_failure_type": "none",
+          "metadata_num_clauses": "4",
+          "eval_typed_correct": 1.0,
+          "eval_baseline_correct": 1.0,
+          "eval_typed_hallucination": 0.0,
+          "eval_baseline_hallucination": 0.0,
+          "eval_improvement": 0.0,
+          "eval_hallucination_improvement": 0.0
+        },
+        {
+          "input": "Theory: Dog is an animal. All animals need food.\nQuery: Does Dog need food?",
+          "output": "True",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "predict_annotator_b": "none",
+          "metadata_dataset": "ruletaker",
+          "metadata_goal": "needs_food(dog)",
+          "metadata_failure_type": "none",
+          "metadata_num_clauses": "2",
+          "eval_typed_correct": 1.0,
+          "eval_baseline_correct": 1.0,
+          "eval_typed_hallucination": 0.0,
+          "eval_baseline_hallucination": 0.0,
+          "eval_improvement": 0.0,
+          "eval_hallucination_improvement": 0.0
+        },
+        {
+          "input": "Theory: Alice is fast. Fast things win races.\nQuery: Does Alice win races?",
+          "output": "True",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "predict_annotator_b": "none",
+          "metadata_dataset": "ruletaker",
+          "metadata_goal": "wins_races(alice)",
+          "metadata_failure_type": "none",
+          "metadata_num_clauses": "2",
+          "eval_typed_correct": 1.0,
+          "eval_baseline_correct": 1.0,
+          "eval_typed_hallucination": 0.0,
+          "eval_baseline_hallucination": 0.0,
+          "eval_improvement": 0.0,
+          "eval_hallucination_improvement": 0.0
+        },
+        {
+          "input": "Theory: Bob is smart. Smart beings pass exams. Exams require studying.\nQuery: Does Bob pass exams?",
+          "output": "True",
+          "predict_typed": "True",
+          "predict_baseline": "False",
+          "predict_annotator_b": "TYPE_3_MISSING_FACT",
+          "metadata_dataset": "ruletaker",
+          "metadata_goal": "passes(bob)",
+          "metadata_failure_type": "TYPE_3_MISSING_FACT",
+          "metadata_num_clauses": "3",
+          "eval_typed_correct": 1.0,
+          "eval_baseline_correct": 0.0,
+          "eval_typed_hallucination": 0.0,
+          "eval_baseline_hallucination": 0.3,
+          "eval_improvement": 1.0,
+          "eval_hallucination_improvement": 0.3
+        },
+        {
+          "input": "Theory: Every bird can fly. Tweety is a bird. Flying requires wings.\nQuery: Can Tweety fly?",
+          "output": "True",
+          "predict_typed": "True",
+          "predict_baseline": "False",
+          "predict_annotator_b": "TYPE_3_MISSING_FACT",
+          "metadata_dataset": "ruletaker",
+          "metadata_goal": "can_fly(tweety)",
+          "metadata_failure_type": "TYPE_3_MISSING_FACT",
+          "metadata_num_clauses": "3",
+          "eval_typed_correct": 1.0,
+          "eval_baseline_correct": 0.0,
+          "eval_typed_hallucination": 0.0,
+          "eval_baseline_hallucination": 0.31,
+          "eval_improvement": 1.0,
+          "eval_hallucination_improvement": 0.31
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr",
+      "examples": [
+        {
+          "input": "Theory: Alice is the mother of Bob. Bob is the father of Carol.\nQuery: What is Alice's relationship to Carol?",
+          "output": "grandmother",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "predict_annotator_b": "TYPE_1_LEXICAL_MISMATCH",
+          "metadata_dataset": "clutrr",
+          "metadata_goal": "relationship(alice, carol)",
+          "metadata_failure_type": "TYPE_1_LEXICAL_MISMATCH",
+          "metadata_num_clauses": "3",
+          "eval_typed_correct": 0.0,
+          "eval_baseline_correct": 0.0,
+          "eval_typed_hallucination": 0.25,
+          "eval_baseline_hallucination": 0.5,
+          "eval_improvement": 0.0,
+          "eval_hallucination_improvement": 0.25
+        },
+        {
+          "input": "Theory: John is the brother of Mary. Mary is the mother of Tom.\nQuery: What is John's relationship to Tom?",
+          "output": "uncle",
+          "predict_typed": "True",
+          "predict_baseline": "False",
+          "predict_annotator_b": "TYPE_3_MISSING_FACT",
+          "metadata_dataset": "clutrr",
+          "metadata_goal": "relationship(john, tom)",
+          "metadata_failure_type": "TYPE_3_MISSING_FACT",
+          "metadata_num_clauses": "3",
+          "eval_typed_correct": 0.0,
+          "eval_baseline_correct": 0.0,
+          "eval_typed_hallucination": 0.4,
+          "eval_baseline_hallucination": 0.6,
+          "eval_improvement": 0.0,
+          "eval_hallucination_improvement": 0.2
+        },
+        {
+          "input": "Theory: Sarah is the daughter of Emma. Emma is the sister of Paul. Paul has a son named David.\nQuery: What is Sarah's relationship to David?",
+          "output": "cousin",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "predict_annotator_b": "TYPE_3_MISSING_FACT",
+          "metadata_dataset": "clutrr",
+          "metadata_goal": "relationship(sarah, david)",
+          "metadata_failure_type": "TYPE_3_MISSING_FACT",
+          "metadata_num_clauses": "4",
+          "eval_typed_correct": 0.0,
+          "eval_baseline_correct": 0.0,
+          "eval_typed_hallucination": 0.45,
+          "eval_baseline_hallucination": 0.65,
+          "eval_improvement": 0.0,
+          "eval_hallucination_improvement": 0.2
+        },
+        {
+          "input": "Theory: Martin is the grandfather of Lisa. Lisa is the mother of Frank.\nQuery: What is Martin's relationship to Frank?",
+          "output": "father",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "predict_annotator_b": "TYPE_3_MISSING_FACT",
+          "metadata_dataset": "clutrr",
+          "metadata_goal": "relationship(martin, frank)",
+          "metadata_failure_type": "TYPE_3_MISSING_FACT",
+          "metadata_num_clauses": "3",
+          "eval_typed_correct": 0.0,
+          "eval_baseline_correct": 0.0,
+          "eval_typed_hallucination": 0.35,
+          "eval_baseline_hallucination": 0.55,
+          "eval_improvement": 0.0,
+          "eval_hallucination_improvement": 0.2
+        },
+        {
+          "input": "Theory: Jane is the sister of Henry. Henry is the father of Clara.\nQuery: What is Jane's relationship to Clara?",
+          "output": "aunt",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "predict_annotator_b": "TYPE_3_MISSING_FACT",
+          "metadata_dataset": "clutrr",
+          "metadata_goal": "relationship(jane, clara)",
+          "metadata_failure_type": "TYPE_3_MISSING_FACT",
+          "metadata_num_clauses": "3",
+          "eval_typed_correct": 0.0,
+          "eval_baseline_correct": 0.0,
+          "eval_typed_hallucination": 0.42,
+          "eval_baseline_hallucination": 0.62,
+          "eval_improvement": 0.0,
+          "eval_hallucination_improvement": 0.2
+        }
+      ]
+    }
+  ]
+}

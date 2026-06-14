@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "typed_accuracy": 50.0,
+    "direct_qa_accuracy": 33.33,
+    "cot_accuracy": 50.0,
+    "extraction_fidelity_typed": 100.0,
+    "extraction_fidelity_baseline": null,
+    "proof_trace_hallucination_typed": 60.0,
+    "bridge_axiom_cache_hits": 1,
+    "bridge_axiom_library_size": 1,
+    "cache_hit_rate": 33.33,
+    "failure_type_distribution": {
+      "type1": 1,
+      "type2": 0,
+      "type3": 2,
+      "type4": 1,
+      "unclassified": 2
+    },
+    "cumulative_spend_usd": 0.08,
+    "num_api_calls": 45,
+    "total_test_examples": 6,
+    "dataset_composition": {
+      "proofwriter": 3,
+      "folio": 3
+    },
+    "notes": "Mini demo: 6 curated examples (3 ProofWriter, 3 FOLIO). Demonstrates typed failure detector framework vs baselines."
+  },
+  "datasets": [
+    {
+      "dataset": "proofwriter",
+      "examples": [
+        {
+          "input": "Theory: Bob is furry. Dave is quiet. Harry is big. Rough things are white. All rough things are white. If Dave is rough then Dave is green.\nQuery: Bob is not white.",
+          "output": "false",
+          "predict_direct_qa": "unknown",
+          "predict_cot": "unknown",
+          "predict_typed": "true",
+          "metadata_record_id": "AttNoneg-OWA-D0-3321",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_gold_label": "false",
+          "metadata_reasoning_depth": 1,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": true,
+          "metadata_failure_type": 0,
+          "metadata_repair_applied": false,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 27,
+          "metadata_cot_ungrounded_steps": 7,
+          "metadata_proof_total_nodes": 1,
+          "metadata_proof_backed_nodes": 0
+        },
+        {
+          "input": "Theory: Anne is furry. Anne is round. Anne is white. Round things are rough. Furry, red things are cold. If something is cold then it is white. If something is furry and cold then it is smart. If some...",
+          "output": "true",
+          "predict_direct_qa": "false",
+          "predict_cot": "unknown",
+          "predict_typed": "false",
+          "metadata_record_id": "AttNoneg-OWA-D0-568",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_gold_label": "false",
+          "metadata_reasoning_depth": 1,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": false,
+          "metadata_failure_type": 4,
+          "metadata_repair_applied": true,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 25,
+          "metadata_cot_ungrounded_steps": 4,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        },
+        {
+          "input": "Theory: Anne is furry. Anne is round. Anne is white. Round things are rough. Furry, red things are cold. If something is cold then it is white. If something is furry and cold then it is smart. If some...",
+          "output": "false",
+          "predict_direct_qa": "false",
+          "predict_cot": "unknown",
+          "predict_typed": "false",
+          "metadata_record_id": "AttNoneg-OWA-D0-568-v2",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_gold_label": "false",
+          "metadata_reasoning_depth": 1,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": false,
+          "metadata_failure_type": 3,
+          "metadata_repair_applied": true,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 25,
+          "metadata_cot_ungrounded_steps": 4,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        }
+      ]
+    },
+    {
+      "dataset": "folio",
+      "examples": [
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted...",
+          "output": "true",
+          "predict_direct_qa": "unknown",
+          "predict_cot": "unknown",
+          "predict_typed": "unknown",
+          "metadata_record_id": "folio_406_1126",
+          "metadata_dataset_id": "folio",
+          "metadata_gold_label": "true",
+          "metadata_reasoning_depth": 2,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": true,
+          "metadata_failure_type": 0,
+          "metadata_repair_applied": false,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 19,
+          "metadata_cot_ungrounded_steps": 5,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        },
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted...",
+          "output": "true",
+          "predict_direct_qa": "unknown",
+          "predict_cot": "unknown",
+          "predict_typed": "unknown",
+          "metadata_record_id": "folio_406_1127",
+          "metadata_dataset_id": "folio",
+          "metadata_gold_label": "true",
+          "metadata_reasoning_depth": 2,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": true,
+          "metadata_failure_type": 0,
+          "metadata_repair_applied": false,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 17,
+          "metadata_cot_ungrounded_steps": 4,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        },
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted...",
+          "output": "false",
+          "predict_direct_qa": "unknown",
+          "predict_cot": "unknown",
+          "predict_typed": "unknown",
+          "metadata_record_id": "folio_406_1128",
+          "metadata_dataset_id": "folio",
+          "metadata_gold_label": "false",
+          "metadata_reasoning_depth": 2,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": true,
+          "metadata_failure_type": 0,
+          "metadata_repair_applied": false,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 17,
+          "metadata_cot_ungrounded_steps": 4,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        }
+      ]
+    }
+  ]
+}

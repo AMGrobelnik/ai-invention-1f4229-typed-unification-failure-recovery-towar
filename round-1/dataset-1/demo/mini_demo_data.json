@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "description": "Neuro-symbolic reasoning datasets standardized for text-to-FOL pipeline",
+    "datasets_included": [
+      "proofwriter",
+      "folio"
+    ],
+    "total_examples": 61204
+  },
+  "datasets": [
+    {
+      "dataset": "proofwriter",
+      "examples": [
+        {
+          "input": "Theory: Gary is furry. Gary is nice. Gary is red. Gary is rough. Gary is not smart. Gary is white. Gary is young. If Gary is nice and Gary is not white then Gary is red. If someone is white then they are red. All young people are furry. If someone is white and not red then they are furry. Smart, red people are rough. If Gary is not red and Gary is not furry then Gary is not smart. If Gary is white then Gary is not smart. If someone is rough and not white then they are not smart.\nQuery: Gary is white.",
+          "output": "true",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNeg-OWA-D0-4611",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 7,
+          "metadata_num_rules": 8,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Gary is furry. Gary is nice. Gary is red. Gary is rough. Gary is not smart. Gary is white. Gary is young. If Gary is nice and Gary is not white then Gary is red. If someone is white then they are red. All young people are furry. If someone is white and not red then they are furry. Smart, red people are rough. If Gary is not red and Gary is not furry then Gary is not smart. If Gary is white then Gary is not smart. If someone is rough and not white then they are not smart.",
+          "metadata_question": "Gary is white.",
+          "metadata_original_label": "True",
+          "metadata_gold_proof": "@0: Gary is furry.[(triple1 OR ((triple7) -> rule3))] Gary is nice.[(triple2)] Gary is not smart.[(triple5 OR ((triple6) -> rule7))] Gary is red.[(triple3 OR ((triple6) -> rule2))] Gary is rough.[(triple4)] Gary is white.[(triple6)] Gary is young.[(triple7)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Gary is furry.\", \"arguments\": [], \"source_span\": [0, 14], \"source_sentence\": \"Gary is furry.\", \"is_rule\": false}, {\"predicate\": \"Gary is nice.\", \"arguments\": [], \"source_span\": [14, 27], \"source_sentence\": \"Gary is nice.\", \"is_rule\": false}, {\"predicate\": \"Gary is red.\", \"arguments\": [], \"source_span\": [28, 40], \"source_sentence\": \"Gary is red.\", \"is_rule\": false}, {\"predicate\": \"Gary is rough.\", \"arguments\": [], \"source_span\": [41, 55], \"source_sentence\": \"Gary is rough.\", \"is_rule\": false}, {\"predicate\": \"Gary is not smart.\", \"arguments\": [], \"source_span\": [56, 74], \"source_sentence\": \"Gary is not smart.\", \"is_rule\": false}, {\"predicate\": \"Gary is white.\", \"arguments\": [], \"source_span\": [75, 89], \"source_sentence\": \"Gary is white.\", \"is_rule\": false}, {\"predicate\": \"Gary is young.\", \"arguments\": [], \"source_span\": [90, 104], \"source_sentence\": \"Gary is young.\", \"is_rule\": false}, {\"predicate\": \"If Gary is nice and Gary is not white then Gary is red.\", \"arguments\": [], \"source_span\": [105, 160], \"source_sentence\": \"If Gary is nice and Gary is not white then Gary is red.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If someone is white then they are red.\", \"arguments\": [], \"source_span\": [161, 199], \"source_sentence\": \"If someone is white then they are red.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All young people are furry.\", \"arguments\": [], \"source_span\": [200, 227], \"source_sentence\": \"All young people are furry.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If someone is white and not red then they are furry.\", \"arguments\": [], \"source_span\": [228, 280], \"source_sentence\": \"If someone is white and not red then they are furry.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"Smart, red people are rough.\", \"arguments\": [], \"source_span\": [281, 309], \"source_sentence\": \"Smart, red people are rough.\", \"is_rule\": false}, {\"predicate\": \"If Gary is not red and Gary is not furry then Gary is not smart.\", \"arguments\": [], \"source_span\": [310, 374], \"source_sentence\": \"If Gary is not red and Gary is not furry then Gary is not smart.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If Gary is white then Gary is not smart.\", \"arguments\": [], \"source_span\": [375, 415], \"source_sentence\": \"If Gary is white then Gary is not smart.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If someone is rough and not white then they are not smart.\", \"arguments\": [], \"source_span\": [416, 474], \"source_sentence\": \"If someone is rough and not white then they are not smart.\", \"is_rule\": true, \"body\": []}]",
+          "metadata_target_query_json": "{\"predicate\": \"Gary is white.\", \"arguments\": [], \"text\": \"Gary is white.\"}"
+        },
+        {
+          "input": "Theory: Gary is furry. Gary is nice. Gary is red. Gary is rough. Gary is not smart. Gary is white. Gary is young. If Gary is nice and Gary is not white then Gary is red. If someone is white then they are red. All young people are furry. If someone is white and not red then they are furry. Smart, red people are rough. If Gary is not red and Gary is not furry then Gary is not smart. If Gary is white then Gary is not smart. If someone is rough and not white then they are not smart.\nQuery: Gary is not nice.",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNeg-OWA-D0-4611",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 7,
+          "metadata_num_rules": 8,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Gary is furry. Gary is nice. Gary is red. Gary is rough. Gary is not smart. Gary is white. Gary is young. If Gary is nice and Gary is not white then Gary is red. If someone is white then they are red. All young people are furry. If someone is white and not red then they are furry. Smart, red people are rough. If Gary is not red and Gary is not furry then Gary is not smart. If Gary is white then Gary is not smart. If someone is rough and not white then they are not smart.",
+          "metadata_question": "Gary is not nice.",
+          "metadata_original_label": "False",
+          "metadata_gold_proof": "@0: Gary is furry.[(triple1 OR ((triple7) -> rule3))] Gary is nice.[(triple2)] Gary is not smart.[(triple5 OR ((triple6) -> rule7))] Gary is red.[(triple3 OR ((triple6) -> rule2))] Gary is rough.[(triple4)] Gary is white.[(triple6)] Gary is young.[(triple7)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Gary is furry.\", \"arguments\": [], \"source_span\": [0, 14], \"source_sentence\": \"Gary is furry.\", \"is_rule\": false}, {\"predicate\": \"Gary is nice.\", \"arguments\": [], \"source_span\": [14, 27], \"source_sentence\": \"Gary is nice.\", \"is_rule\": false}, {\"predicate\": \"Gary is red.\", \"arguments\": [], \"source_span\": [28, 40], \"source_sentence\": \"Gary is red.\", \"is_rule\": false}, {\"predicate\": \"Gary is rough.\", \"arguments\": [], \"source_span\": [41, 55], \"source_sentence\": \"Gary is rough.\", \"is_rule\": false}, {\"predicate\": \"Gary is not smart.\", \"arguments\": [], \"source_span\": [56, 74], \"source_sentence\": \"Gary is not smart.\", \"is_rule\": false}, {\"predicate\": \"Gary is white.\", \"arguments\": [], \"source_span\": [75, 89], \"source_sentence\": \"Gary is white.\", \"is_rule\": false}, {\"predicate\": \"Gary is young.\", \"arguments\": [], \"source_span\": [90, 104], \"source_sentence\": \"Gary is young.\", \"is_rule\": false}, {\"predicate\": \"If Gary is nice and Gary is not white then Gary is red.\", \"arguments\": [], \"source_span\": [105, 160], \"source_sentence\": \"If Gary is nice and Gary is not white then Gary is red.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If someone is white then they are red.\", \"arguments\": [], \"source_span\": [161, 199], \"source_sentence\": \"If someone is white then they are red.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All young people are furry.\", \"arguments\": [], \"source_span\": [200, 227], \"source_sentence\": \"All young people are furry.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If someone is white and not red then they are furry.\", \"arguments\": [], \"source_span\": [228, 280], \"source_sentence\": \"If someone is white and not red then they are furry.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"Smart, red people are rough.\", \"arguments\": [], \"source_span\": [281, 309], \"source_sentence\": \"Smart, red people are rough.\", \"is_rule\": false}, {\"predicate\": \"If Gary is not red and Gary is not furry then Gary is not smart.\", \"arguments\": [], \"source_span\": [310, 374], \"source_sentence\": \"If Gary is not red and Gary is not furry then Gary is not smart.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If Gary is white then Gary is not smart.\", \"arguments\": [], \"source_span\": [375, 415], \"source_sentence\": \"If Gary is white then Gary is not smart.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If someone is rough and not white then they are not smart.\", \"arguments\": [], \"source_span\": [416, 474], \"source_sentence\": \"If someone is rough and not white then they are not smart.\", \"is_rule\": true, \"body\": []}]",
+          "metadata_target_query_json": "{\"predicate\": \"Gary is not nice.\", \"arguments\": [], \"text\": \"Gary is not nice.\"}"
+        },
+        {
+          "input": "Theory: Bob is furry. Dave is quiet. Harry is big. Rough things are white. All rough things are white. If Dave is rough then Dave is green.\nQuery: Bob is furry.",
+          "output": "true",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNoneg-OWA-D0-3321",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 3,
+          "metadata_num_rules": 3,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Bob is furry. Dave is quiet. Harry is big. Rough things are white. All rough things are white. If Dave is rough then Dave is green.",
+          "metadata_question": "Bob is furry.",
+          "metadata_original_label": "True",
+          "metadata_gold_proof": "@0: Bob is furry.[(triple1)] Dave is quiet.[(triple2)] Harry is big.[(triple3)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Bob is furry.\", \"arguments\": [], \"source_span\": [0, 13], \"source_sentence\": \"Bob is furry.\", \"is_rule\": false}, {\"predicate\": \"Dave is quiet.\", \"arguments\": [], \"source_span\": [13, 27], \"source_sentence\": \"Dave is quiet.\", \"is_rule\": false}, {\"predicate\": \"Harry is big.\", \"arguments\": [], \"source_span\": [28, 41], \"source_sentence\": \"Harry is big.\", \"is_rule\": false}, {\"predicate\": \"Rough things are white.\", \"arguments\": [], \"source_span\": [42, 65], \"source_sentence\": \"Rough things are white.\", \"is_rule\": false}, {\"predicate\": \"All rough things are white.\", \"arguments\": [], \"source_span\": [66, 93], \"source_sentence\": \"All rough things are white.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If Dave is rough then Dave is green.\", \"arguments\": [], \"source_span\": [94, 130], \"source_sentence\": \"If Dave is rough then Dave is green.\", \"is_rule\": true, \"body\": []}]",
+          "metadata_target_query_json": "{\"predicate\": \"Bob is furry.\", \"arguments\": [], \"text\": \"Bob is furry.\"}"
+        }
+      ]
+    },
+    {
+      "dataset": "folio",
+      "examples": [
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "output": "true",
+          "metadata_dataset_id": "folio",
+          "metadata_record_id": "folio_406_1126",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 4,
+          "metadata_num_rules": 1,
+          "metadata_task_type": "fol_entailment",
+          "metadata_source_text": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+          "metadata_question": "Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "metadata_original_label": "True",
+          "metadata_premises_fol": "∀x (DrinkRegularly(x, coffee) → IsDependentOn(x, caffeine))\n∀x (DrinkRegularly(x, coffee)  ∨ (¬WantToBeAddictedTo(x, caffeine)))\n∀x (¬WantToBeAddictedTo(x, caffeine) → ¬AwareThatDrug(x, caffeine))\n¬(Student(rina) ⊕  ¬AwareThatDrug(rina, caffeine))\n¬(IsDependentOn(rina, caffeine) ⊕ Student(rina))",
+          "metadata_conclusion_fol": "¬WantToBeAddictedTo(rina, caffeine) ∨ (¬AwareThatDrug(rina, caffeine))",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"All people who regularly drink coffee are dependent on caffeine.\", \"arguments\": [], \"source_span\": [0, 64], \"source_sentence\": \"All people who regularly drink coffee are dependent on caffeine.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"arguments\": [], \"source_span\": [65, 151], \"source_sentence\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"is_rule\": false}, {\"predicate\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [152, 238], \"source_sentence\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [239, 369], \"source_sentence\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"arguments\": [], \"source_span\": [370, 480], \"source_sentence\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"is_rule\": false}]",
+          "metadata_target_query_json": "{\"predicate\": \"Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.\", \"arguments\": [], \"text\": \"Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.\"}"
+        },
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "output": "true",
+          "metadata_dataset_id": "folio",
+          "metadata_record_id": "folio_406_1127",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 4,
+          "metadata_num_rules": 1,
+          "metadata_task_type": "fol_entailment",
+          "metadata_source_text": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+          "metadata_question": "Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "metadata_original_label": "True",
+          "metadata_premises_fol": "∀x (DrinkRegularly(x, coffee) → IsDependentOn(x, caffeine))\n∀x (DrinkRegularly(x, coffee)  ∨ (¬WantToBeAddictedTo(x, caffeine)))\n∀x (¬WantToBeAddictedTo(x, caffeine) → ¬AwareThatDrug(x, caffeine))\n¬(Student(rina) ⊕  ¬AwareThatDrug(rina, caffeine))\n¬(IsDependentOn(rina, caffeine) ⊕ Student(rina))",
+          "metadata_conclusion_fol": "¬WantToBeAddictedTo(rina, caffeine) ⊕ ¬AwareThatDrug(rina, caffeine)",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"All people who regularly drink coffee are dependent on caffeine.\", \"arguments\": [], \"source_span\": [0, 64], \"source_sentence\": \"All people who regularly drink coffee are dependent on caffeine.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"arguments\": [], \"source_span\": [65, 151], \"source_sentence\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"is_rule\": false}, {\"predicate\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [152, 238], \"source_sentence\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [239, 369], \"source_sentence\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"arguments\": [], \"source_span\": [370, 480], \"source_sentence\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"is_rule\": false}]",
+          "metadata_target_query_json": "{\"predicate\": \"Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.\", \"arguments\": [], \"text\": \"Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.\"}"
+        },
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina either regularly drinks coffee or is unaware that caffeine is a drug.",
+          "output": "false",
+          "metadata_dataset_id": "folio",
+          "metadata_record_id": "folio_406_1128",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 4,
+          "metadata_num_rules": 1,
+          "metadata_task_type": "fol_entailment",
+          "metadata_source_text": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+          "metadata_question": "Rina either regularly drinks coffee or is unaware that caffeine is a drug.",
+          "metadata_original_label": "False",
+          "metadata_premises_fol": "∀x (DrinkRegularly(x, coffee) → IsDependentOn(x, caffeine))\n∀x (DrinkRegularly(x, coffee)  ∨ (¬WantToBeAddictedTo(x, caffeine)))\n∀x (¬WantToBeAddictedTo(x, caffeine) → ¬AwareThatDrug(x, caffeine))\n¬(Student(rina) ⊕  ¬AwareThatDrug(rina, caffeine))\n¬(IsDependentOn(rina, caffeine) ⊕ Student(rina))",
+          "metadata_conclusion_fol": "DrinkRegularly(rina, coffee)  ⊕ IsUnawareThatCaffeineIsADrug(rina)",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"All people who regularly drink coffee are dependent on caffeine.\", \"arguments\": [], \"source_span\": [0, 64], \"source_sentence\": \"All people who regularly drink coffee are dependent on caffeine.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"arguments\": [], \"source_span\": [65, 151], \"source_sentence\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"is_rule\": false}, {\"predicate\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [152, 238], \"source_sentence\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [239, 369], \"source_sentence\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"arguments\": [], \"source_span\": [370, 480], \"source_sentence\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"is_rule\": false}]",
+          "metadata_target_query_json": "{\"predicate\": \"Rina either regularly drinks coffee or is unaware that caffeine is a drug.\", \"arguments\": [], \"text\": \"Rina either regularly drinks coffee or is unaware that caffeine is a drug.\"}"
+        }
+      ]
+    }
+  ]
+}
