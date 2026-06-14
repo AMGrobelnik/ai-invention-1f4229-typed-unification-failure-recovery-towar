@@ -1,0 +1,114 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Badreddine et~al.(2022)Badreddine, d'Avila Garcez, Serafini, and
+  Spranger]{Badreddine2020}
+Samy Badreddine, Artur d'Avila Garcez, Luciano Serafini, and Michael Spranger.
+\newblock Logic tensor networks.
+\newblock \emph{Artificial Intelligence}, 303:\penalty0 103649, 2022.
+\newblock \doi{10.1016/j.artint.2021.103649}.
+
+\bibitem[Bolz-Tereick and contributors(2023)]{PrologPy2023}
+Chris Bolz-Tereick and contributors.
+\newblock Python-based prolog backward-chaining interpreter.
+\newblock \url{https://github.com/topics/prolog-interpreter}, 2023.
+
+\bibitem[Cornelio and Diab(2024)]{Cornelio2024}
+Cristina Cornelio and Mohammed Diab.
+\newblock {RECOVER}: A neuro-symbolic framework for failure detection and
+  recovery.
+\newblock In \emph{Proceedings of the IEEE/RSJ International Conference on
+  Intelligent Robots and Systems}, pages 12435--12442, 2024.
+\newblock \doi{10.1109/IROS58592.2024.10801853}.
+
+\bibitem[d'Avila Garcez and Lamb(2020)]{Garcez2020}
+Artur d'Avila Garcez and Luis~C. Lamb.
+\newblock Neurosymbolic {AI}: The 3rd wave.
+\newblock \emph{ArXiv}, abs/2012.05876, 2020.
+\newblock \doi{10.48550/arXiv.2012.05876}.
+
+\bibitem[{ISO/IEC}(2012)]{ISO2012}
+{ISO/IEC}.
+\newblock Information technology -- programming languages -- {P}rolog -- part
+  1: General core.
+\newblock Standard 13211-1:1995, International Organization for
+  Standardization, 2012.
+
+\bibitem[Kalouli et~al.(2022)Kalouli, Crouch, and de~Paiva]{Kalouli2022}
+Aikaterini-Lida Kalouli, Richard Crouch, and Valeria de~Paiva.
+\newblock Hy-nli: A hybrid system for natural language inference.
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in
+  Natural Language Processing}, pages 8622--8636, 2022.
+\newblock \doi{10.18653/v1/2022.emnlp-main.585}.
+
+\bibitem[Manhaeve et~al.(2018)Manhaeve, Dumancic, Kimmig, Demeester, and
+  Raedt]{Manhaeve2018}
+Robin Manhaeve, Sebastijan Dumancic, Angelika Kimmig, Thomas Demeester, and
+  Luc~De Raedt.
+\newblock {D}eep{P}rob{L}og: Neural probabilistic logic programming.
+\newblock In \emph{Advances in Neural Information Processing Systems}, pages
+  3753--3763, 2018.
+
+\bibitem[Olausson et~al.(2023)Olausson, Gu, Lipkin, Zhang, Solar-Lezama,
+  Tenenbaum, and Levy]{Olausson2023}
+Theo~X. Olausson, Alex Gu, Ben Lipkin, Cedegao~E. Zhang, Armando Solar-Lezama,
+  Joshua~B. Tenenbaum, and Roger Levy.
+\newblock Is neuro-symbolic {AI} meeting its promise in natural language \&
+  knowledge representation? a structured survey.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock \doi{10.48550/arXiv.2202.12205}.
+
+\bibitem[Ranaldi et~al.(2023)Ranaldi, Pucci, and Freitas]{Ranaldi2023}
+Leonardo Ranaldi, Giulia Pucci, and Andre Freitas.
+\newblock Aligning large language models for faithful logical reasoning.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in
+  Natural Language Processing}, pages 3203--3215, 2023.
+\newblock \doi{10.18653/v1/2023.emnlp-main.193}.
+
+\bibitem[Sheth et~al.(2023)Sheth, Gaur, Roy, Venkataraman, and
+  Khandelwal]{Sheth2023}
+Amit Sheth, Manas Gaur, Kaushik Roy, Revathy Venkataraman, and Vedant
+  Khandelwal.
+\newblock Neurosymbolic {AI} -- why, what, and how.
+\newblock \emph{IEEE Internet Computing}, 27\penalty0 (1):\penalty0 9--15,
+  2023.
+\newblock \doi{10.1109/MIC.2023.3253406}.
+
+\bibitem[Sinha et~al.(2019)Sinha, Sodhani, Dong, Pineau, and
+  Hamilton]{Sinha2019}
+Koustuv Sinha, Shagun Sodhani, Jin Dong, Joelle Pineau, and William~L.
+  Hamilton.
+\newblock {CLUTRR}: A diagnostic benchmark for inductive reasoning from text.
+\newblock In \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing}, pages 4505--4514, 2019.
+\newblock \doi{10.18653/v1/D19-1458}.
+
+\bibitem[Weber et~al.(2019)Weber, Minervini, M{\"{u}}nchmeyer, Leser, and
+  Rockt{\"{a}}schel]{Weber2019}
+Leon Weber, Pasquale Minervini, Jannes M{\"{u}}nchmeyer, Ulf Leser, and Tim
+  Rockt{\"{a}}schel.
+\newblock {NLP}rolog: Reasoning with weak unification for question answering in
+  natural language.
+\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association
+  for Computational Linguistics}, pages 6151--6161, 2019.
+\newblock \doi{10.18653/v1/P19-1618}.
+
+\bibitem[Winters et~al.(2022)Winters, Marra, Manhaeve, and Raedt]{Winters2021}
+Thomas Winters, Giuseppe Marra, Robin Manhaeve, and Luc~De Raedt.
+\newblock {D}eep{S}toch{L}og: Neural stochastic logic programming.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, pages 10090--10100, 2022.
+\newblock \doi{10.1609/aaai.v36i9.21248}.
+
+\bibitem[won Hwang et~al.(2022)won Hwang, Jeon, Cho, and Myaeng]{Jung2022}
+Seung won Hwang, Hyesung Jeon, Won~Ik Cho, and Sung-Hyon Myaeng.
+\newblock Probabilistic abductive commonsense reasoning.
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in
+  Natural Language Processing}, pages 9418--9432, 2022.
+\newblock \doi{10.18653/v1/2022.emnlp-main.643}.
+
+\end{thebibliography}

@@ -1,0 +1,14 @@
+{
+  "title": "Typed Unification Failure Recovery: Text-to-FOL Neuro-Symbolic Paper",
+  "summary": "Generated a 13-page publication-ready LaTeX paper titled 'Typed Unification Failure Recovery: Toward Hallucination-Resistant Neuro-Symbolic Text-to-FOL Reasoning' targeting the ACL Knowledge Extraction track.\n\nSections written: Abstract, Introduction (with contributions list), Related Work (4 subsections: soft unification, iterative failure-driven repair, span-grounded reasoning, text-to-FOL bottlenecks), Typed Failure Taxonomy (5 types: lexical predicate mismatch, argument-structure mismatch, missing domain fact, ontological category violation, quantifier scope conflict), Implementation (Prolog engine, failure classifier with pseudocode, type-specific repair prompts, bridge-axiom library, hallucination measurement), Experiments (setup, RuleTaker results with table, CLUTRR results with table, failure-type detection accuracy, bridge-axiom library analysis, cost and efficiency), Discussion (limitations, design trade-offs, compiler analogy, future work), Conclusion, and References.\n\nAll 3 figures included:\n- fig_architecture_v0.jpg (21:9 full-width, figure* at top of page 3): end-to-end pipeline diagram\n- fig_hallucination_reduction_v0.jpg (21:9 full-width, figure* on page 10): grouped bar chart showing 35.5%/32.3% hallucination reduction\n- fig_failure_distribution_v0.jpg (21:9 full-width, figure* on page 11): stacked bar chart of failure-type counts\n\nBibliography: 14 BibTeX entries in references.bib covering NLProlog (Weber2019), DeepProbLog (Manhaeve2018), DeepStochLog (Winters2021), RECOVER (Cornelio2024), CLUTRR (Sinha2019), Logic Tensor Networks (Badreddine2020), Neurosymbolic AI (Garcez2020, Sheth2023), PACS (Jung2022), span-grounded reasoning (Kalouli2022), NL-to-FOL bottleneck (Ranaldi2023), Prolog ISO standard (ISO2012), Python Prolog interpreter (PrologPy2023), and Olausson2023 for ARGOS-style baseline.\n\nCompilation: 4-step pdflatex/bibtex process completed successfully. PDF is 13 pages, 4.07 MB. Visual review of all 13 pages confirmed clean layout, proper figure rendering, correct table formatting, and no text overflow or spacing issues.",
+  "out_expected_files": {
+    "paper_tex_path": "paper.tex",
+    "paper_pdf_path": "paper.pdf",
+    "references_bib_path": "references.bib",
+    "figure_paths": [
+      "figures/fig_architecture_v0.jpg",
+      "figures/fig_hallucination_reduction_v0.jpg",
+      "figures/fig_failure_distribution_v0.jpg"
+    ]
+  }
+}
