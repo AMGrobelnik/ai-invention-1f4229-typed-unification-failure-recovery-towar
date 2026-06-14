@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "description": "Neuro-symbolic reasoning datasets standardized for text-to-FOL pipeline",
+    "datasets_included": [
+      "proofwriter",
+      "folio"
+    ],
+    "total_examples": 61204,
+    "part": 5,
+    "total_parts": 5
+  },
+  "datasets": [
+    {
+      "dataset": "folio",
+      "examples": [
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "output": "true",
+          "metadata_dataset_id": "folio",
+          "metadata_record_id": "folio_406_1126",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 4,
+          "metadata_num_rules": 1,
+          "metadata_task_type": "fol_entailment",
+          "metadata_source_text": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+          "metadata_question": "Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "metadata_original_label": "True",
+          "metadata_premises_fol": "∀x (DrinkRegularly(x, coffee) → IsDependentOn(x, caffeine))\n∀x (DrinkRegularly(x, coffee)  ∨ (¬WantToBeAddictedTo(x, caffeine)))\n∀x (¬WantToBeAddictedTo(x, caffeine) → ¬AwareThatDrug(x, caffeine))\n¬(Student(rina) ⊕  ¬AwareThatDrug(rina, caffeine))\n¬(IsDependentOn(rina, caffeine) ⊕ Student(rina))",
+          "metadata_conclusion_fol": "¬WantToBeAddictedTo(rina, caffeine) ∨ (¬AwareThatDrug(rina, caffeine))",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"All people who regularly drink coffee are dependent on caffeine.\", \"arguments\": [], \"source_span\": [0, 64], \"source_sentence\": \"All people who regularly drink coffee are dependent on caffeine.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"arguments\": [], \"source_span\": [65, 151], \"source_sentence\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"is_rule\": false}, {\"predicate\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [152, 238], \"source_sentence\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [239, 369], \"source_sentence\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"arguments\": [], \"source_span\": [370, 480], \"source_sentence\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"is_rule\": false}]",
+          "metadata_target_query_json": "{\"predicate\": \"Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.\", \"arguments\": [], \"text\": \"Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.\"}"
+        },
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "output": "true",
+          "metadata_dataset_id": "folio",
+          "metadata_record_id": "folio_406_1127",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 4,
+          "metadata_num_rules": 1,
+          "metadata_task_type": "fol_entailment",
+          "metadata_source_text": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+          "metadata_question": "Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "metadata_original_label": "True",
+          "metadata_premises_fol": "∀x (DrinkRegularly(x, coffee) → IsDependentOn(x, caffeine))\n∀x (DrinkRegularly(x, coffee)  ∨ (¬WantToBeAddictedTo(x, caffeine)))\n∀x (¬WantToBeAddictedTo(x, caffeine) → ¬AwareThatDrug(x, caffeine))\n¬(Student(rina) ⊕  ¬AwareThatDrug(rina, caffeine))\n¬(IsDependentOn(rina, caffeine) ⊕ Student(rina))",
+          "metadata_conclusion_fol": "¬WantToBeAddictedTo(rina, caffeine) ⊕ ¬AwareThatDrug(rina, caffeine)",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"All people who regularly drink coffee are dependent on caffeine.\", \"arguments\": [], \"source_span\": [0, 64], \"source_sentence\": \"All people who regularly drink coffee are dependent on caffeine.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"arguments\": [], \"source_span\": [65, 151], \"source_sentence\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"is_rule\": false}, {\"predicate\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [152, 238], \"source_sentence\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [239, 369], \"source_sentence\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"arguments\": [], \"source_span\": [370, 480], \"source_sentence\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"is_rule\": false}]",
+          "metadata_target_query_json": "{\"predicate\": \"Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.\", \"arguments\": [], \"text\": \"Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.\"}"
+        },
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina either regularly drinks coffee or is unaware that caffeine is a drug.",
+          "output": "false",
+          "metadata_dataset_id": "folio",
+          "metadata_record_id": "folio_406_1128",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 4,
+          "metadata_num_rules": 1,
+          "metadata_task_type": "fol_entailment",
+          "metadata_source_text": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+          "metadata_question": "Rina either regularly drinks coffee or is unaware that caffeine is a drug.",
+          "metadata_original_label": "False",
+          "metadata_premises_fol": "∀x (DrinkRegularly(x, coffee) → IsDependentOn(x, caffeine))\n∀x (DrinkRegularly(x, coffee)  ∨ (¬WantToBeAddictedTo(x, caffeine)))\n∀x (¬WantToBeAddictedTo(x, caffeine) → ¬AwareThatDrug(x, caffeine))\n¬(Student(rina) ⊕  ¬AwareThatDrug(rina, caffeine))\n¬(IsDependentOn(rina, caffeine) ⊕ Student(rina))",
+          "metadata_conclusion_fol": "DrinkRegularly(rina, coffee)  ⊕ IsUnawareThatCaffeineIsADrug(rina)",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"All people who regularly drink coffee are dependent on caffeine.\", \"arguments\": [], \"source_span\": [0, 64], \"source_sentence\": \"All people who regularly drink coffee are dependent on caffeine.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"arguments\": [], \"source_span\": [65, 151], \"source_sentence\": \"People regularly drink coffee, or they don't want to be addicted to caffeine, or both.\", \"is_rule\": false}, {\"predicate\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [152, 238], \"source_sentence\": \"No one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"arguments\": [], \"source_span\": [239, 369], \"source_sentence\": \"Rina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\", \"is_rule\": false}, {\"predicate\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"arguments\": [], \"source_span\": [370, 480], \"source_sentence\": \"Rina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\", \"is_rule\": false}]",
+          "metadata_target_query_json": "{\"predicate\": \"Rina either regularly drinks coffee or is unaware that caffeine is a drug.\", \"arguments\": [], \"text\": \"Rina either regularly drinks coffee or is unaware that caffeine is a drug.\"}"
+        }
+      ]
+    }
+  ]
+}

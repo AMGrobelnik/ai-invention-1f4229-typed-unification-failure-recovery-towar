@@ -1,0 +1,9 @@
+{"ts": 1781468992.096904, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "LOGIC-LM 2305.12295 arXiv self-refinement FOL", "count": 5}
+{"ts": 1781469022.3213737, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "LINC Olausson EMNLP 2023 2310.15164 FOL Prover9", "count": 5}
+{"ts": 1781469026.8752012, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "NL2LOGIC Gao EACL 2026 text-to-FOL AST", "count": 5}
+{"ts": 1781469036.4625614, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "scope ambiguities large language models quantifier 2404.04332", "count": 5}
+{"ts": 1781469041.8086953, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "neuro-symbolic error classification failure modes solver feedback", "count": 5}
+{"ts": 1781469048.2158115, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "RuleTaker CLUTRR benchmark logical reasoning evaluation", "count": 5}
+{"ts": 1781469069.501912, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "abductive reasoning logic programming commonsense knowledge gap resolution", "count": 5}
+{"ts": 1781469083.461814, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "RuleTaker Tafjord 2020 arXiv entailment reasoning benchmark", "count": 5}
+{"ts": 1781469083.680088, "tool": "aii_web_tools__search", "cost_usd": 0.001, "query": "LLM solver feedback iterative refinement repair syntax semantic errors", "count": 5}

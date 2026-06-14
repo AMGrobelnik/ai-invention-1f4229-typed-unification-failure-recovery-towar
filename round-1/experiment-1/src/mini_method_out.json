@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "method_name": "typed_failure_repair",
+    "description": "Typed proof failure detection + type-specific LLM repair vs ARGOS single-strategy baseline",
+    "llm_model": "anthropic/claude-haiku-4.5",
+    "total_cost_usd": 0.2311,
+    "bridge_axiom_library_size": 4,
+    "bridge_axiom_reuse_rate": 0.04,
+    "metrics": {
+      "ruletaker": {
+        "n": 100,
+        "typed_accuracy": 0.95,
+        "baseline_accuracy": 0.95,
+        "improvement_pct": 0.0,
+        "typed_hallucination_rate": 0.0833,
+        "baseline_hallucination_rate": 0.1292,
+        "hallucination_reduction_pct": 35.48,
+        "failure_distribution": {
+          "none": 85,
+          "TYPE_3_MISSING_FACT": 15
+        }
+      },
+      "clutrr": {
+        "n": 100,
+        "typed_accuracy": 0.0,
+        "baseline_accuracy": 0.0,
+        "improvement_pct": 0.0,
+        "typed_hallucination_rate": 0.3867,
+        "baseline_hallucination_rate": 0.5711,
+        "hallucination_reduction_pct": 32.3,
+        "failure_distribution": {
+          "TYPE_1_LEXICAL_MISMATCH": 4,
+          "TYPE_3_MISSING_FACT": 60,
+          "none": 36
+        }
+      }
+    },
+    "failure_type_taxonomy": {
+      "TYPE_1_LEXICAL_MISMATCH": "Predicate absent from KB but similar one exists",
+      "TYPE_2_ARITY_MISMATCH": "Predicate exists but called with wrong arity",
+      "TYPE_3_MISSING_FACT": "Proof search exhausted — missing ground fact",
+      "TYPE_4_CATEGORY_VIOLATION": "Type-error exception in proof",
+      "TYPE_5_SCOPE_CONFLICT": "Quantifier scope conflict (heuristic)"
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "ruletaker",
+      "examples": [
+        {
+          "input": "Theory: Lion likes cow. Cat likes bird. If X likes Y and Y is cold then X is cold. Cow is cold.\nQuery: Is Lion cold?",
+          "output": "True",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "metadata_dataset": "ruletaker",
+          "metadata_goal": "is_cold(lion)",
+          "metadata_failure_type": "none",
+          "metadata_typed_hallucination": "0.0",
+          "metadata_baseline_hallucination": "0.0",
+          "metadata_typed_correct": "True",
+          "metadata_baseline_correct": "True",
+          "metadata_num_clauses": "4"
+        },
+        {
+          "input": "Theory: Dog is an animal. All animals need food.\nQuery: Does Dog need food?",
+          "output": "True",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "metadata_dataset": "ruletaker",
+          "metadata_goal": "needs_food(dog)",
+          "metadata_failure_type": "none",
+          "metadata_typed_hallucination": "0.0",
+          "metadata_baseline_hallucination": "0.0",
+          "metadata_typed_correct": "True",
+          "metadata_baseline_correct": "True",
+          "metadata_num_clauses": "2"
+        },
+        {
+          "input": "Theory: Alice is fast. Fast things win races.\nQuery: Does Alice win races?",
+          "output": "True",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "metadata_dataset": "ruletaker",
+          "metadata_goal": "wins_races(alice)",
+          "metadata_failure_type": "none",
+          "metadata_typed_hallucination": "0.0",
+          "metadata_baseline_hallucination": "0.0",
+          "metadata_typed_correct": "True",
+          "metadata_baseline_correct": "True",
+          "metadata_num_clauses": "2"
+        }
+      ]
+    },
+    {
+      "dataset": "clutrr",
+      "examples": [
+        {
+          "input": "Theory: Alice is the mother of Bob. Bob is the father of Carol.\nQuery: What is Alice's relationship to Carol?",
+          "output": "grandmother",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "metadata_dataset": "clutrr",
+          "metadata_goal": "relationship(alice, carol)",
+          "metadata_failure_type": "TYPE_1_LEXICAL_MISMATCH",
+          "metadata_typed_hallucination": "0.25",
+          "metadata_baseline_hallucination": "0.5",
+          "metadata_typed_correct": "False",
+          "metadata_baseline_correct": "False",
+          "metadata_num_clauses": "3"
+        },
+        {
+          "input": "Theory: John is the brother of Mary. Mary is the mother of Tom.\nQuery: What is John's relationship to Tom?",
+          "output": "uncle",
+          "predict_typed": "True",
+          "predict_baseline": "False",
+          "metadata_dataset": "clutrr",
+          "metadata_goal": "relationship(john, tom)",
+          "metadata_failure_type": "TYPE_1_LEXICAL_MISMATCH",
+          "metadata_typed_hallucination": "0.25",
+          "metadata_baseline_hallucination": "0.5",
+          "metadata_typed_correct": "False",
+          "metadata_baseline_correct": "False",
+          "metadata_num_clauses": "3"
+        },
+        {
+          "input": "Theory: Sarah is the daughter of Emma. Emma is the sister of Paul.\nQuery: What is Sarah's relationship to Paul?",
+          "output": "uncle",
+          "predict_typed": "True",
+          "predict_baseline": "True",
+          "metadata_dataset": "clutrr",
+          "metadata_goal": "relationship(sarah, paul)",
+          "metadata_failure_type": "TYPE_1_LEXICAL_MISMATCH",
+          "metadata_typed_hallucination": "0.25",
+          "metadata_baseline_hallucination": "0.5",
+          "metadata_typed_correct": "False",
+          "metadata_baseline_correct": "False",
+          "metadata_num_clauses": "3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "description": "Neuro-symbolic reasoning datasets standardized for text-to-FOL pipeline",
+    "datasets_included": [
+      "proofwriter",
+      "folio"
+    ],
+    "total_examples": 61204,
+    "part": 2,
+    "total_parts": 5
+  },
+  "datasets": [
+    {
+      "dataset": "proofwriter",
+      "examples": [
+        {
+          "input": "Theory: Anne is big. Anne is furry. Anne is kind. Anne is white. Dave is cold. Dave is kind. Dave is red. Dave is rough. Dave is white. Fiona is cold. Fiona is white. Harry is kind. Kind people are red. All cold, furry people are big. Red, big people are kind. All big, cold people are white. All red, rough people are furry. All rough, white people are furry.\nQuery: Fiona is not kind.",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNoneg-OWA-D0-5986",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 12,
+          "metadata_num_rules": 6,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Anne is big. Anne is furry. Anne is kind. Anne is white. Dave is cold. Dave is kind. Dave is red. Dave is rough. Dave is white. Fiona is cold. Fiona is white. Harry is kind. Kind people are red. All cold, furry people are big. Red, big people are kind. All big, cold people are white. All red, rough people are furry. All rough, white people are furry.",
+          "metadata_question": "Fiona is not kind.",
+          "metadata_original_label": "Unknown",
+          "metadata_gold_proof": "@0: Anne is big.[(triple1)] Anne is furry.[(triple2)] Anne is kind.[(triple3)] Anne is white.[(triple4)] Dave is cold.[(triple5)] Dave is kind.[(triple6 OR ((triple7 ((triple5 ((triple7 triple8) -> rule5)) -> rule2)) -> rule3) OR ((triple7 ((triple5 ((triple8 triple9) -> rule6)) -> rule2)) -> rule3))] Dave is red.[(triple7 OR ((triple6) -> rule1))] Dave is rough.[(triple8)] Dave is white.[(triple9 OR ((((triple5 ((triple7 triple8) -> rule5)) -> rule2) triple5) -> rule4) OR ((((triple5 ((((triple",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Anne is big.\", \"arguments\": [], \"source_span\": [0, 12], \"source_sentence\": \"Anne is big.\", \"is_rule\": false}, {\"predicate\": \"Anne is furry.\", \"arguments\": [], \"source_span\": [12, 26], \"source_sentence\": \"Anne is furry.\", \"is_rule\": false}, {\"predicate\": \"Anne is kind.\", \"arguments\": [], \"source_span\": [27, 40], \"source_sentence\": \"Anne is kind.\", \"is_rule\": false}, {\"predicate\": \"Anne is white.\", \"arguments\": [], \"source_span\": [41, 55], \"source_sentence\": \"Anne is white.\", \"is_rule\": false}, {\"predicate\": \"Dave is cold.\", \"arguments\": [], \"source_span\": [56, 69], \"source_sentence\": \"Dave is cold.\", \"is_rule\": false}, {\"predicate\": \"Dave is kind.\", \"arguments\": [], \"source_span\": [70, 83], \"source_sentence\": \"Dave is kind.\", \"is_rule\": false}, {\"predicate\": \"Dave is red.\", \"arguments\": [], \"source_span\": [84, 96], \"source_sentence\": \"Dave is red.\", \"is_rule\": false}, {\"predicate\": \"Dave is rough.\", \"arguments\": [], \"source_span\": [97, 111], \"source_sentence\": \"Dave is rough.\", \"is_rule\": false}, {\"predicate\": \"Dave is white.\", \"arguments\": [], \"source_span\": [112, 126], \"source_sentence\": \"Dave is white.\", \"is_rule\": false}, {\"predicate\": \"Fiona is cold.\", \"arguments\": [], \"source_span\": [127, 141], \"source_sentence\": \"Fiona is cold.\", \"is_rule\": false}, {\"predicate\": \"Fiona is white.\", \"arguments\": [], \"source_span\": [142, 157], \"source_sentence\": \"Fiona is white.\", \"is_rule\": false}, {\"predicate\": \"Harry is kind.\", \"arguments\": [], \"source_span\": [158, 172], \"source_sentence\": \"Harry is kind.\", \"is_rule\": false}, {\"predicate\": \"Kind people are red.\", \"arguments\": [], \"source_span\": [173, 193], \"source_sentence\": \"Kind people are red.\", \"is_rule\": false}, {\"predicate\": \"All cold, furry people are big.\", \"arguments\": [], \"source_span\": [194, 225], \"source_sentence\": \"All cold, furry people are big.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"Red, big people are kind.\", \"arguments\": [], \"source_span\": [226, 251], \"source_sentence\": \"Red, big people are kind.\", \"is_rule\": false}, {\"predicate\": \"All big, cold people are white.\", \"arguments\": [], \"source_span\": [252, 283], \"source_sentence\": \"All big, cold people are white.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All red, rough people are furry.\", \"arguments\": [], \"source_span\": [284, 316], \"source_sentence\": \"All red, rough people are furry.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All rough, white people are furry.\", \"arguments\": [], \"source_span\": [317, 351], \"source_sentence\": \"All rough, white people are furry.\", \"is_rule\": true, \"body\": []}]",
+          "metadata_target_query_json": "{\"predicate\": \"Fiona is not kind.\", \"arguments\": [], \"text\": \"Fiona is not kind.\"}"
+        },
+        {
+          "input": "Theory: Anne is big. Anne is furry. Anne is kind. Anne is white. Dave is cold. Dave is kind. Dave is red. Dave is rough. Dave is white. Fiona is cold. Fiona is white. Harry is kind. Kind people are red. All cold, furry people are big. Red, big people are kind. All big, cold people are white. All red, rough people are furry. All rough, white people are furry.\nQuery: Harry is rough.",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNoneg-OWA-D0-5986",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 12,
+          "metadata_num_rules": 6,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Anne is big. Anne is furry. Anne is kind. Anne is white. Dave is cold. Dave is kind. Dave is red. Dave is rough. Dave is white. Fiona is cold. Fiona is white. Harry is kind. Kind people are red. All cold, furry people are big. Red, big people are kind. All big, cold people are white. All red, rough people are furry. All rough, white people are furry.",
+          "metadata_question": "Harry is rough.",
+          "metadata_original_label": "Unknown",
+          "metadata_gold_proof": "@0: Anne is big.[(triple1)] Anne is furry.[(triple2)] Anne is kind.[(triple3)] Anne is white.[(triple4)] Dave is cold.[(triple5)] Dave is kind.[(triple6 OR ((triple7 ((triple5 ((triple7 triple8) -> rule5)) -> rule2)) -> rule3) OR ((triple7 ((triple5 ((triple8 triple9) -> rule6)) -> rule2)) -> rule3))] Dave is red.[(triple7 OR ((triple6) -> rule1))] Dave is rough.[(triple8)] Dave is white.[(triple9 OR ((((triple5 ((triple7 triple8) -> rule5)) -> rule2) triple5) -> rule4) OR ((((triple5 ((((triple",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Anne is big.\", \"arguments\": [], \"source_span\": [0, 12], \"source_sentence\": \"Anne is big.\", \"is_rule\": false}, {\"predicate\": \"Anne is furry.\", \"arguments\": [], \"source_span\": [12, 26], \"source_sentence\": \"Anne is furry.\", \"is_rule\": false}, {\"predicate\": \"Anne is kind.\", \"arguments\": [], \"source_span\": [27, 40], \"source_sentence\": \"Anne is kind.\", \"is_rule\": false}, {\"predicate\": \"Anne is white.\", \"arguments\": [], \"source_span\": [41, 55], \"source_sentence\": \"Anne is white.\", \"is_rule\": false}, {\"predicate\": \"Dave is cold.\", \"arguments\": [], \"source_span\": [56, 69], \"source_sentence\": \"Dave is cold.\", \"is_rule\": false}, {\"predicate\": \"Dave is kind.\", \"arguments\": [], \"source_span\": [70, 83], \"source_sentence\": \"Dave is kind.\", \"is_rule\": false}, {\"predicate\": \"Dave is red.\", \"arguments\": [], \"source_span\": [84, 96], \"source_sentence\": \"Dave is red.\", \"is_rule\": false}, {\"predicate\": \"Dave is rough.\", \"arguments\": [], \"source_span\": [97, 111], \"source_sentence\": \"Dave is rough.\", \"is_rule\": false}, {\"predicate\": \"Dave is white.\", \"arguments\": [], \"source_span\": [112, 126], \"source_sentence\": \"Dave is white.\", \"is_rule\": false}, {\"predicate\": \"Fiona is cold.\", \"arguments\": [], \"source_span\": [127, 141], \"source_sentence\": \"Fiona is cold.\", \"is_rule\": false}, {\"predicate\": \"Fiona is white.\", \"arguments\": [], \"source_span\": [142, 157], \"source_sentence\": \"Fiona is white.\", \"is_rule\": false}, {\"predicate\": \"Harry is kind.\", \"arguments\": [], \"source_span\": [158, 172], \"source_sentence\": \"Harry is kind.\", \"is_rule\": false}, {\"predicate\": \"Kind people are red.\", \"arguments\": [], \"source_span\": [173, 193], \"source_sentence\": \"Kind people are red.\", \"is_rule\": false}, {\"predicate\": \"All cold, furry people are big.\", \"arguments\": [], \"source_span\": [194, 225], \"source_sentence\": \"All cold, furry people are big.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"Red, big people are kind.\", \"arguments\": [], \"source_span\": [226, 251], \"source_sentence\": \"Red, big people are kind.\", \"is_rule\": false}, {\"predicate\": \"All big, cold people are white.\", \"arguments\": [], \"source_span\": [252, 283], \"source_sentence\": \"All big, cold people are white.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All red, rough people are furry.\", \"arguments\": [], \"source_span\": [284, 316], \"source_sentence\": \"All red, rough people are furry.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All rough, white people are furry.\", \"arguments\": [], \"source_span\": [317, 351], \"source_sentence\": \"All rough, white people are furry.\", \"is_rule\": true, \"body\": []}]",
+          "metadata_target_query_json": "{\"predicate\": \"Harry is rough.\", \"arguments\": [], \"text\": \"Harry is rough.\"}"
+        },
+        {
+          "input": "Theory: Erin is not young. If something is cold and not smart then it is big. Big, young things are furry.\nQuery: Erin is not young.",
+          "output": "true",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNeg-OWA-D0-1290",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 1,
+          "metadata_num_rules": 2,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Erin is not young. If something is cold and not smart then it is big. Big, young things are furry.",
+          "metadata_question": "Erin is not young.",
+          "metadata_original_label": "True",
+          "metadata_gold_proof": "@0: Erin is not young.[(triple1)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Erin is not young.\", \"arguments\": [], \"source_span\": [0, 18], \"source_sentence\": \"Erin is not young.\", \"is_rule\": false}, {\"predicate\": \"If something is cold and not smart then it is big.\", \"arguments\": [], \"source_span\": [18, 68], \"source_sentence\": \"If something is cold and not smart then it is big.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"Big, young things are furry.\", \"arguments\": [], \"source_span\": [69, 97], \"source_sentence\": \"Big, young things are furry.\", \"is_rule\": false}]",
+          "metadata_target_query_json": "{\"predicate\": \"Erin is not young.\", \"arguments\": [], \"text\": \"Erin is not young.\"}"
+        }
+      ]
+    }
+  ]
+}

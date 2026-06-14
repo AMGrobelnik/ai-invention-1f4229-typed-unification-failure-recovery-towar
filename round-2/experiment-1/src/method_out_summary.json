@@ -1,0 +1,26 @@
+{
+  "typed_accuracy": 43.75,
+  "direct_qa_accuracy": 35.62,
+  "cot_accuracy": 38.75,
+  "extraction_fidelity_typed": 100.0,
+  "extraction_fidelity_baseline": null,
+  "proof_trace_hallucination_typed": 72.73,
+  "bridge_axiom_cache_hits": 7,
+  "bridge_axiom_library_size": 6,
+  "cache_hit_rate": 33.33,
+  "failure_type_distribution": {
+    "type1": 14,
+    "type2": 0,
+    "type3": 43,
+    "type4": 4,
+    "unclassified": 99
+  },
+  "cumulative_spend_usd": 0.62045,
+  "num_api_calls": 462,
+  "total_test_examples": 160,
+  "dataset_composition": {
+    "proofwriter": 80,
+    "folio": 80
+  },
+  "notes": "SWI-Prolog not available; used Python backward chainer for ProofWriter. FOLIO handled via LLM (complex FOL). Type-5 (quantifier scope) deferred to future work. OpenCyc unavailable; Type-4 uses heuristic attribute-role checking. Pre-extracted spans from dataset used for extraction fidelity. ProofWriter samples use reasoning_depth >= 1 for non-trivial chains."
+}

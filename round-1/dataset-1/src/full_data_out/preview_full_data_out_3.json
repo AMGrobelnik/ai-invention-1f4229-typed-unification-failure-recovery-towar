@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "description": "Neuro-symbolic reasoning datasets standardized for text-to-FOL pipeline",
+    "datasets_included": [
+      "proofwriter",
+      "folio"
+    ],
+    "total_examples": 61204,
+    "part": 3,
+    "total_parts": 5
+  },
+  "datasets": [
+    {
+      "dataset": "proofwriter",
+      "examples": [
+        {
+          "input": "Theory: The rabbit chases the tiger. The rabbit eats the tiger. The rabbit is big. The rabbit is green. The rabbit is kind. The rabbit is not nice. The rabbit is red. The rabbit likes the tiger. The t...",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "RelNeg-OWA-D0-2064",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 16,
+          "metadata_num_rules": 2,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "The rabbit chases the tiger. The rabbit eats the tiger. The rabbit is big. The rabbit is green. The rabbit is kind. The rabbit is not nice. The rabbit is red. The rabbit likes the tiger. The tiger cha...",
+          "metadata_question": "The rabbit does not chase the rabbit.",
+          "metadata_original_label": "Unknown",
+          "metadata_gold_proof": "@0: The rabbit chases the tiger.[(triple1)] The rabbit eats the tiger.[(triple2)] The rabbit is big.[(triple3)] The rabbit is green.[(triple4)] The rabbit is kind.[(triple5)] The rabbit is not nice.[(...",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"The rabbit chases the tiger.\", \"arguments\": [], \"source_span\": [0, 28], \"source_sentence\": \"The rabbit chases the tiger.\", \"is_rule\": false}, {\"predicate\": \"The rabbit eats the tiger.\"...",
+          "metadata_target_query_json": "{\"predicate\": \"The rabbit does not chase the rabbit.\", \"arguments\": [], \"text\": \"The rabbit does not chase the rabbit.\"}"
+        },
+        {
+          "input": "Theory: The rabbit chases the tiger. The rabbit eats the tiger. The rabbit is big. The rabbit is green. The rabbit is kind. The rabbit is not nice. The rabbit is red. The rabbit likes the tiger. The t...",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "RelNeg-OWA-D0-2064",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 16,
+          "metadata_num_rules": 2,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "The rabbit chases the tiger. The rabbit eats the tiger. The rabbit is big. The rabbit is green. The rabbit is kind. The rabbit is not nice. The rabbit is red. The rabbit likes the tiger. The tiger cha...",
+          "metadata_question": "The tiger likes the tiger.",
+          "metadata_original_label": "Unknown",
+          "metadata_gold_proof": "@0: The rabbit chases the tiger.[(triple1)] The rabbit eats the tiger.[(triple2)] The rabbit is big.[(triple3)] The rabbit is green.[(triple4)] The rabbit is kind.[(triple5)] The rabbit is not nice.[(...",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"The rabbit chases the tiger.\", \"arguments\": [], \"source_span\": [0, 28], \"source_sentence\": \"The rabbit chases the tiger.\", \"is_rule\": false}, {\"predicate\": \"The rabbit eats the tiger.\"...",
+          "metadata_target_query_json": "{\"predicate\": \"The tiger likes the tiger.\", \"arguments\": [], \"text\": \"The tiger likes the tiger.\"}"
+        },
+        {
+          "input": "Theory: The cow chases the dog. The cow chases the mouse. The cow eats the mouse. The cow is big. The cow is kind. The cow is rough. The cow is young. The cow sees the dog. The dog eats the cow. The d...",
+          "output": "true",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "RelNoneg-OWA-D0-4420",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 16,
+          "metadata_num_rules": 1,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "The cow chases the dog. The cow chases the mouse. The cow eats the mouse. The cow is big. The cow is kind. The cow is rough. The cow is young. The cow sees the dog. The dog eats the cow. The dog eats ...",
+          "metadata_question": "The cow is rough.",
+          "metadata_original_label": "True",
+          "metadata_gold_proof": "@0: The cow chases the dog.[(triple1)] The cow chases the mouse.[(triple2)] The cow eats the mouse.[(triple3)] The cow is big.[(triple4)] The cow is kind.[(triple5)] The cow is rough.[(triple6)] The c...",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"The cow chases the dog.\", \"arguments\": [], \"source_span\": [0, 23], \"source_sentence\": \"The cow chases the dog.\", \"is_rule\": false}, {\"predicate\": \"The cow chases the mouse.\", \"argument...",
+          "metadata_target_query_json": "{\"predicate\": \"The cow is rough.\", \"arguments\": [], \"text\": \"The cow is rough.\"}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "description": "Neuro-symbolic reasoning datasets standardized for text-to-FOL pipeline",
+    "datasets_included": [
+      "proofwriter",
+      "folio"
+    ],
+    "total_examples": 61204,
+    "part": 2,
+    "total_parts": 5
+  },
+  "datasets": [
+    {
+      "dataset": "proofwriter",
+      "examples": [
+        {
+          "input": "Theory: Anne is big. Anne is furry. Anne is kind. Anne is white. Dave is cold. Dave is kind. Dave is red. Dave is rough. Dave is white. Fiona is cold. Fiona is white. Harry is kind. Kind people are re...",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNoneg-OWA-D0-5986",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 12,
+          "metadata_num_rules": 6,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Anne is big. Anne is furry. Anne is kind. Anne is white. Dave is cold. Dave is kind. Dave is red. Dave is rough. Dave is white. Fiona is cold. Fiona is white. Harry is kind. Kind people are red. All c...",
+          "metadata_question": "Fiona is not kind.",
+          "metadata_original_label": "Unknown",
+          "metadata_gold_proof": "@0: Anne is big.[(triple1)] Anne is furry.[(triple2)] Anne is kind.[(triple3)] Anne is white.[(triple4)] Dave is cold.[(triple5)] Dave is kind.[(triple6 OR ((triple7 ((triple5 ((triple7 triple8) -> ru...",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Anne is big.\", \"arguments\": [], \"source_span\": [0, 12], \"source_sentence\": \"Anne is big.\", \"is_rule\": false}, {\"predicate\": \"Anne is furry.\", \"arguments\": [], \"source_span\": [12, 26], ...",
+          "metadata_target_query_json": "{\"predicate\": \"Fiona is not kind.\", \"arguments\": [], \"text\": \"Fiona is not kind.\"}"
+        },
+        {
+          "input": "Theory: Anne is big. Anne is furry. Anne is kind. Anne is white. Dave is cold. Dave is kind. Dave is red. Dave is rough. Dave is white. Fiona is cold. Fiona is white. Harry is kind. Kind people are re...",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNoneg-OWA-D0-5986",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 2,
+          "metadata_num_facts": 12,
+          "metadata_num_rules": 6,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Anne is big. Anne is furry. Anne is kind. Anne is white. Dave is cold. Dave is kind. Dave is red. Dave is rough. Dave is white. Fiona is cold. Fiona is white. Harry is kind. Kind people are red. All c...",
+          "metadata_question": "Harry is rough.",
+          "metadata_original_label": "Unknown",
+          "metadata_gold_proof": "@0: Anne is big.[(triple1)] Anne is furry.[(triple2)] Anne is kind.[(triple3)] Anne is white.[(triple4)] Dave is cold.[(triple5)] Dave is kind.[(triple6 OR ((triple7 ((triple5 ((triple7 triple8) -> ru...",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Anne is big.\", \"arguments\": [], \"source_span\": [0, 12], \"source_sentence\": \"Anne is big.\", \"is_rule\": false}, {\"predicate\": \"Anne is furry.\", \"arguments\": [], \"source_span\": [12, 26], ...",
+          "metadata_target_query_json": "{\"predicate\": \"Harry is rough.\", \"arguments\": [], \"text\": \"Harry is rough.\"}"
+        },
+        {
+          "input": "Theory: Erin is not young. If something is cold and not smart then it is big. Big, young things are furry.\nQuery: Erin is not young.",
+          "output": "true",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNeg-OWA-D0-1290",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 1,
+          "metadata_num_rules": 2,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Erin is not young. If something is cold and not smart then it is big. Big, young things are furry.",
+          "metadata_question": "Erin is not young.",
+          "metadata_original_label": "True",
+          "metadata_gold_proof": "@0: Erin is not young.[(triple1)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Erin is not young.\", \"arguments\": [], \"source_span\": [0, 18], \"source_sentence\": \"Erin is not young.\", \"is_rule\": false}, {\"predicate\": \"If something is cold and not smart then it is b...",
+          "metadata_target_query_json": "{\"predicate\": \"Erin is not young.\", \"arguments\": [], \"text\": \"Erin is not young.\"}"
+        }
+      ]
+    }
+  ]
+}

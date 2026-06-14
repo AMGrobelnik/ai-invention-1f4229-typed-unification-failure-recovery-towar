@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "description": "Neuro-symbolic reasoning datasets standardized for text-to-FOL pipeline",
+    "datasets_included": [
+      "proofwriter",
+      "folio"
+    ],
+    "total_examples": 61204,
+    "part": 1,
+    "total_parts": 5
+  },
+  "datasets": [
+    {
+      "dataset": "proofwriter",
+      "examples": [
+        {
+          "input": "Theory: Gary is furry. Gary is nice. Gary is red. Gary is rough. Gary is not smart. Gary is white. Gary is young. If Gary is nice and Gary is not white then Gary is red. If someone is white then they ...",
+          "output": "true",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNeg-OWA-D0-4611",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 7,
+          "metadata_num_rules": 8,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Gary is furry. Gary is nice. Gary is red. Gary is rough. Gary is not smart. Gary is white. Gary is young. If Gary is nice and Gary is not white then Gary is red. If someone is white then they are red....",
+          "metadata_question": "Gary is white.",
+          "metadata_original_label": "True",
+          "metadata_gold_proof": "@0: Gary is furry.[(triple1 OR ((triple7) -> rule3))] Gary is nice.[(triple2)] Gary is not smart.[(triple5 OR ((triple6) -> rule7))] Gary is red.[(triple3 OR ((triple6) -> rule2))] Gary is rough.[(tri...",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Gary is furry.\", \"arguments\": [], \"source_span\": [0, 14], \"source_sentence\": \"Gary is furry.\", \"is_rule\": false}, {\"predicate\": \"Gary is nice.\", \"arguments\": [], \"source_span\": [14, 27...",
+          "metadata_target_query_json": "{\"predicate\": \"Gary is white.\", \"arguments\": [], \"text\": \"Gary is white.\"}"
+        },
+        {
+          "input": "Theory: Gary is furry. Gary is nice. Gary is red. Gary is rough. Gary is not smart. Gary is white. Gary is young. If Gary is nice and Gary is not white then Gary is red. If someone is white then they ...",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNeg-OWA-D0-4611",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 7,
+          "metadata_num_rules": 8,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Gary is furry. Gary is nice. Gary is red. Gary is rough. Gary is not smart. Gary is white. Gary is young. If Gary is nice and Gary is not white then Gary is red. If someone is white then they are red....",
+          "metadata_question": "Gary is not nice.",
+          "metadata_original_label": "False",
+          "metadata_gold_proof": "@0: Gary is furry.[(triple1 OR ((triple7) -> rule3))] Gary is nice.[(triple2)] Gary is not smart.[(triple5 OR ((triple6) -> rule7))] Gary is red.[(triple3 OR ((triple6) -> rule2))] Gary is rough.[(tri...",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Gary is furry.\", \"arguments\": [], \"source_span\": [0, 14], \"source_sentence\": \"Gary is furry.\", \"is_rule\": false}, {\"predicate\": \"Gary is nice.\", \"arguments\": [], \"source_span\": [14, 27...",
+          "metadata_target_query_json": "{\"predicate\": \"Gary is not nice.\", \"arguments\": [], \"text\": \"Gary is not nice.\"}"
+        },
+        {
+          "input": "Theory: Bob is furry. Dave is quiet. Harry is big. Rough things are white. All rough things are white. If Dave is rough then Dave is green.\nQuery: Bob is furry.",
+          "output": "true",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "AttNoneg-OWA-D0-3321",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 3,
+          "metadata_num_rules": 3,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "Bob is furry. Dave is quiet. Harry is big. Rough things are white. All rough things are white. If Dave is rough then Dave is green.",
+          "metadata_question": "Bob is furry.",
+          "metadata_original_label": "True",
+          "metadata_gold_proof": "@0: Bob is furry.[(triple1)] Dave is quiet.[(triple2)] Harry is big.[(triple3)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"Bob is furry.\", \"arguments\": [], \"source_span\": [0, 13], \"source_sentence\": \"Bob is furry.\", \"is_rule\": false}, {\"predicate\": \"Dave is quiet.\", \"arguments\": [], \"source_span\": [13, 27]...",
+          "metadata_target_query_json": "{\"predicate\": \"Bob is furry.\", \"arguments\": [], \"text\": \"Bob is furry.\"}"
+        }
+      ]
+    }
+  ]
+}

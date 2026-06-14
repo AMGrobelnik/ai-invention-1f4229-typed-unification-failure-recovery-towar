@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "description": "Neuro-symbolic reasoning datasets standardized for text-to-FOL pipeline",
+    "datasets_included": [
+      "proofwriter",
+      "folio"
+    ],
+    "total_examples": 61204,
+    "part": 4,
+    "total_parts": 5
+  },
+  "datasets": [
+    {
+      "dataset": "proofwriter",
+      "examples": [
+        {
+          "input": "Theory: The lion is blue. The lion is cold. The lion is rough. The lion is round. The lion is young. If something is blue then it is cold. If the lion is cold then the lion is blue. All young things are cold.\nQuery: The lion is blue.",
+          "output": "true",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "RelNoneg-OWA-D0-5453",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 5,
+          "metadata_num_rules": 3,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "The lion is blue. The lion is cold. The lion is rough. The lion is round. The lion is young. If something is blue then it is cold. If the lion is cold then the lion is blue. All young things are cold.",
+          "metadata_question": "The lion is blue.",
+          "metadata_original_label": "True",
+          "metadata_gold_proof": "@0: The lion is blue.[(triple1 OR ((triple2) -> rule2) OR ((((triple5) -> rule3)) -> rule2))] The lion is cold.[(triple2 OR ((triple1) -> rule1) OR ((triple5) -> rule3))] The lion is rough.[(triple3)] The lion is round.[(triple4)] The lion is young.[(triple5)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"The lion is blue.\", \"arguments\": [], \"source_span\": [0, 17], \"source_sentence\": \"The lion is blue.\", \"is_rule\": false}, {\"predicate\": \"The lion is cold.\", \"arguments\": [], \"source_span\": [17, 34], \"source_sentence\": \"The lion is cold.\", \"is_rule\": false}, {\"predicate\": \"The lion is rough.\", \"arguments\": [], \"source_span\": [35, 53], \"source_sentence\": \"The lion is rough.\", \"is_rule\": false}, {\"predicate\": \"The lion is round.\", \"arguments\": [], \"source_span\": [54, 72], \"source_sentence\": \"The lion is round.\", \"is_rule\": false}, {\"predicate\": \"The lion is young.\", \"arguments\": [], \"source_span\": [73, 91], \"source_sentence\": \"The lion is young.\", \"is_rule\": false}, {\"predicate\": \"If something is blue then it is cold.\", \"arguments\": [], \"source_span\": [92, 129], \"source_sentence\": \"If something is blue then it is cold.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If the lion is cold then the lion is blue.\", \"arguments\": [], \"source_span\": [130, 172], \"source_sentence\": \"If the lion is cold then the lion is blue.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All young things are cold.\", \"arguments\": [], \"source_span\": [173, 199], \"source_sentence\": \"All young things are cold.\", \"is_rule\": true, \"body\": []}]",
+          "metadata_target_query_json": "{\"predicate\": \"The lion is blue.\", \"arguments\": [], \"text\": \"The lion is blue.\"}"
+        },
+        {
+          "input": "Theory: The lion is blue. The lion is cold. The lion is rough. The lion is round. The lion is young. If something is blue then it is cold. If the lion is cold then the lion is blue. All young things are cold.\nQuery: The lion is not young.",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "RelNoneg-OWA-D0-5453",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 5,
+          "metadata_num_rules": 3,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "The lion is blue. The lion is cold. The lion is rough. The lion is round. The lion is young. If something is blue then it is cold. If the lion is cold then the lion is blue. All young things are cold.",
+          "metadata_question": "The lion is not young.",
+          "metadata_original_label": "False",
+          "metadata_gold_proof": "@0: The lion is blue.[(triple1 OR ((triple2) -> rule2) OR ((((triple5) -> rule3)) -> rule2))] The lion is cold.[(triple2 OR ((triple1) -> rule1) OR ((triple5) -> rule3))] The lion is rough.[(triple3)] The lion is round.[(triple4)] The lion is young.[(triple5)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"The lion is blue.\", \"arguments\": [], \"source_span\": [0, 17], \"source_sentence\": \"The lion is blue.\", \"is_rule\": false}, {\"predicate\": \"The lion is cold.\", \"arguments\": [], \"source_span\": [17, 34], \"source_sentence\": \"The lion is cold.\", \"is_rule\": false}, {\"predicate\": \"The lion is rough.\", \"arguments\": [], \"source_span\": [35, 53], \"source_sentence\": \"The lion is rough.\", \"is_rule\": false}, {\"predicate\": \"The lion is round.\", \"arguments\": [], \"source_span\": [54, 72], \"source_sentence\": \"The lion is round.\", \"is_rule\": false}, {\"predicate\": \"The lion is young.\", \"arguments\": [], \"source_span\": [73, 91], \"source_sentence\": \"The lion is young.\", \"is_rule\": false}, {\"predicate\": \"If something is blue then it is cold.\", \"arguments\": [], \"source_span\": [92, 129], \"source_sentence\": \"If something is blue then it is cold.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If the lion is cold then the lion is blue.\", \"arguments\": [], \"source_span\": [130, 172], \"source_sentence\": \"If the lion is cold then the lion is blue.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All young things are cold.\", \"arguments\": [], \"source_span\": [173, 199], \"source_sentence\": \"All young things are cold.\", \"is_rule\": true, \"body\": []}]",
+          "metadata_target_query_json": "{\"predicate\": \"The lion is not young.\", \"arguments\": [], \"text\": \"The lion is not young.\"}"
+        },
+        {
+          "input": "Theory: The lion is blue. The lion is cold. The lion is rough. The lion is round. The lion is young. If something is blue then it is cold. If the lion is cold then the lion is blue. All young things are cold.\nQuery: The lion does not like the lion.",
+          "output": "false",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_record_id": "RelNoneg-OWA-D0-5453",
+          "metadata_split": "train",
+          "metadata_reasoning_depth": 0,
+          "metadata_num_facts": 5,
+          "metadata_num_rules": 3,
+          "metadata_config": "depth-0",
+          "metadata_task_type": "logical_entailment_with_proof",
+          "metadata_source_text": "The lion is blue. The lion is cold. The lion is rough. The lion is round. The lion is young. If something is blue then it is cold. If the lion is cold then the lion is blue. All young things are cold.",
+          "metadata_question": "The lion does not like the lion.",
+          "metadata_original_label": "Unknown",
+          "metadata_gold_proof": "@0: The lion is blue.[(triple1 OR ((triple2) -> rule2) OR ((((triple5) -> rule3)) -> rule2))] The lion is cold.[(triple2 OR ((triple1) -> rule1) OR ((triple5) -> rule3))] The lion is rough.[(triple3)] The lion is round.[(triple4)] The lion is young.[(triple5)]",
+          "metadata_extracted_facts_json": "[{\"predicate\": \"The lion is blue.\", \"arguments\": [], \"source_span\": [0, 17], \"source_sentence\": \"The lion is blue.\", \"is_rule\": false}, {\"predicate\": \"The lion is cold.\", \"arguments\": [], \"source_span\": [17, 34], \"source_sentence\": \"The lion is cold.\", \"is_rule\": false}, {\"predicate\": \"The lion is rough.\", \"arguments\": [], \"source_span\": [35, 53], \"source_sentence\": \"The lion is rough.\", \"is_rule\": false}, {\"predicate\": \"The lion is round.\", \"arguments\": [], \"source_span\": [54, 72], \"source_sentence\": \"The lion is round.\", \"is_rule\": false}, {\"predicate\": \"The lion is young.\", \"arguments\": [], \"source_span\": [73, 91], \"source_sentence\": \"The lion is young.\", \"is_rule\": false}, {\"predicate\": \"If something is blue then it is cold.\", \"arguments\": [], \"source_span\": [92, 129], \"source_sentence\": \"If something is blue then it is cold.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"If the lion is cold then the lion is blue.\", \"arguments\": [], \"source_span\": [130, 172], \"source_sentence\": \"If the lion is cold then the lion is blue.\", \"is_rule\": true, \"body\": []}, {\"predicate\": \"All young things are cold.\", \"arguments\": [], \"source_span\": [173, 199], \"source_sentence\": \"All young things are cold.\", \"is_rule\": true, \"body\": []}]",
+          "metadata_target_query_json": "{\"predicate\": \"The lion does not like the lion.\", \"arguments\": [], \"text\": \"The lion does not like the lion.\"}"
+        }
+      ]
+    }
+  ]
+}

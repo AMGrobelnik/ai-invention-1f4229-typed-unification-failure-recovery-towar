@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "typed_accuracy": 43.75,
+    "direct_qa_accuracy": 35.62,
+    "cot_accuracy": 38.75,
+    "extraction_fidelity_typed": 100.0,
+    "extraction_fidelity_baseline": null,
+    "proof_trace_hallucination_typed": 72.73,
+    "bridge_axiom_cache_hits": 7,
+    "bridge_axiom_library_size": 6,
+    "cache_hit_rate": 33.33,
+    "failure_type_distribution": {
+      "type1": 14,
+      "type2": 0,
+      "type3": 43,
+      "type4": 4,
+      "unclassified": 99
+    },
+    "cumulative_spend_usd": 0.62045,
+    "num_api_calls": 462,
+    "total_test_examples": 160,
+    "dataset_composition": {
+      "proofwriter": 80,
+      "folio": 80
+    },
+    "notes": "SWI-Prolog not available; used Python backward chainer for ProofWriter. FOLIO handled via LLM (complex FOL). Type-5 (quantifier scope) deferred to future work. OpenCyc unavailable; Type-4 uses heuristic attribute-role checking. Pre-extracted spans from dataset used for extraction fidelity. ProofWriter samples use reasoning_depth >= 1 for non-trivial chains."
+  },
+  "datasets": [
+    {
+      "dataset": "proofwriter",
+      "examples": [
+        {
+          "input": "Theory: Bob is furry. Dave is quiet. Harry is big. Rough things are white. All rough things are white. If Dave is rough then Dave is green.\nQuery: Bob is not white.",
+          "output": "false",
+          "predict_direct_qa": "unknown",
+          "predict_cot": "unknown",
+          "predict_typed": "true",
+          "metadata_record_id": "AttNoneg-OWA-D0-3321",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_gold_label": "false",
+          "metadata_reasoning_depth": 1,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": true,
+          "metadata_failure_type": 0,
+          "metadata_repair_applied": false,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 27,
+          "metadata_cot_ungrounded_steps": 7,
+          "metadata_proof_total_nodes": 1,
+          "metadata_proof_backed_nodes": 0
+        },
+        {
+          "input": "Theory: Anne is furry. Anne is round. Anne is white. Round things are rough. Furry, red things are cold. If something is cold then it is white. If something is furry and cold then it is smart. If something is cold then it is smart. All white, red things are smart. If something is smart and round then it is cold. Cold things are red.\nQuery: Anne is furry.",
+          "output": "true",
+          "predict_direct_qa": "false",
+          "predict_cot": "unknown",
+          "predict_typed": "false",
+          "metadata_record_id": "AttNoneg-OWA-D0-568",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_gold_label": "false",
+          "metadata_reasoning_depth": 1,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": false,
+          "metadata_failure_type": 4,
+          "metadata_repair_applied": true,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 25,
+          "metadata_cot_ungrounded_steps": 4,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        },
+        {
+          "input": "Theory: Anne is furry. Anne is round. Anne is white. Round things are rough. Furry, red things are cold. If something is cold then it is white. If something is furry and cold then it is smart. If something is cold then it is smart. All white, red things are smart. If something is smart and round then it is cold. Cold things are red.\nQuery: Anne is not white.",
+          "output": "false",
+          "predict_direct_qa": "false",
+          "predict_cot": "unknown",
+          "predict_typed": "false",
+          "metadata_record_id": "AttNoneg-OWA-D0-568",
+          "metadata_dataset_id": "proofwriter",
+          "metadata_gold_label": "false",
+          "metadata_reasoning_depth": 1,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": false,
+          "metadata_failure_type": 4,
+          "metadata_repair_applied": true,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 25,
+          "metadata_cot_ungrounded_steps": 4,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        }
+      ]
+    },
+    {
+      "dataset": "folio",
+      "examples": [
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "output": "true",
+          "predict_direct_qa": "unknown",
+          "predict_cot": "unknown",
+          "predict_typed": "unknown",
+          "metadata_record_id": "folio_406_1126",
+          "metadata_dataset_id": "folio",
+          "metadata_gold_label": "true",
+          "metadata_reasoning_depth": 2,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": true,
+          "metadata_failure_type": 0,
+          "metadata_repair_applied": false,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 19,
+          "metadata_cot_ungrounded_steps": 5,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        },
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+          "output": "true",
+          "predict_direct_qa": "unknown",
+          "predict_cot": "unknown",
+          "predict_typed": "unknown",
+          "metadata_record_id": "folio_406_1127",
+          "metadata_dataset_id": "folio",
+          "metadata_gold_label": "true",
+          "metadata_reasoning_depth": 2,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": true,
+          "metadata_failure_type": 0,
+          "metadata_repair_applied": false,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 17,
+          "metadata_cot_ungrounded_steps": 4,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        },
+        {
+          "input": "Premises:\nAll people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.\nConclusion: Rina either regularly drinks coffee or is unaware that caffeine is a drug.",
+          "output": "false",
+          "predict_direct_qa": "unknown",
+          "predict_cot": "unknown",
+          "predict_typed": "unknown",
+          "metadata_record_id": "folio_406_1128",
+          "metadata_dataset_id": "folio",
+          "metadata_gold_label": "false",
+          "metadata_reasoning_depth": 2,
+          "metadata_extraction_fidelity": 100.0,
+          "metadata_proof_success": true,
+          "metadata_failure_type": 0,
+          "metadata_repair_applied": false,
+          "metadata_repair_success": false,
+          "metadata_cot_steps": 17,
+          "metadata_cot_ungrounded_steps": 4,
+          "metadata_proof_total_nodes": 0,
+          "metadata_proof_backed_nodes": 0
+        }
+      ]
+    }
+  ]
+}

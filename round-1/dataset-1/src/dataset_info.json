@@ -1,0 +1,96 @@
+{
+  "datasets": [
+    {
+      "name": "tasksource/ruletaker",
+      "hf_id": "tasksource/ruletaker",
+      "paper": "Clark et al. 2020, Transformers as Soft Reasoners over Language, IJCAI 2020, arXiv:2002.05867",
+      "source": "AllenAI",
+      "downloads": 775,
+      "license": "apache-2.0",
+      "task": "logical entailment from natural language rules and facts",
+      "fields": ["context", "question", "label", "config"],
+      "label_values": ["entailment", "not entailment"],
+      "reasoning_depth_field": "config",
+      "example_config_values": ["depth-0", "depth-1", "depth-2", "depth-3", "depth-5"],
+      "files": {
+        "train": "temp/datasets/full_tasksource_ruletaker_train.json",
+        "test": "temp/datasets/full_tasksource_ruletaker_test.json"
+      },
+      "row_counts": {
+        "train": 50000,
+        "test": 10000
+      },
+      "size_mb": {
+        "train": 25.4,
+        "test": 5.1
+      },
+      "notes": "Streamed 50k train + 10k test rows. Full dataset has ~707k examples across train/dev/test. Context contains natural language facts and rules; question is a statement; label is entailment/not_entailment. Config encodes reasoning depth."
+    },
+    {
+      "name": "tasksource/proofwriter",
+      "hf_id": "tasksource/proofwriter",
+      "paper": "Tafjord et al. 2021, ProofWriter: Generating Implications, Proofs, and Abductive Statements over Natural Language, Findings ACL-IJCNLP 2021, arXiv:2012.13048",
+      "source": "AllenAI",
+      "downloads": 2132,
+      "license": "unknown",
+      "task": "logical entailment with gold proof traces and proof generation",
+      "fields": ["id", "maxD", "NFact", "NRule", "theory", "question", "answer", "QDep", "QLen", "allProofs", "config"],
+      "label_values": ["True", "False", "Unknown"],
+      "reasoning_depth_field": "maxD",
+      "gold_proofs_field": "allProofs",
+      "files": {
+        "train": "temp/datasets/full_tasksource_proofwriter_train.json",
+        "test": "temp/datasets/full_tasksource_proofwriter_test.json"
+      },
+      "row_counts": {
+        "train": 50000,
+        "test": 10000
+      },
+      "size_mb": {
+        "train": 53.0,
+        "test": 10.4
+      },
+      "notes": "Extends RuleTaker with gold proof traces in allProofs field. OWA (Open-World Assumption) version with depths 0-5. The theory field contains all facts+rules in NL. allProofs encodes the proof tree with triple/rule references. Includes Unknown class unlike binary RuleTaker."
+    },
+    {
+      "name": "tasksource/folio",
+      "hf_id": "tasksource/folio",
+      "paper": "Han et al. 2022, FOLIO: Natural Language Reasoning with First-Order Logic, EMNLP 2024, arXiv:2209.00840",
+      "source": "Yale-LILY",
+      "downloads": 1742,
+      "license": "cc-by-4.0",
+      "task": "FOL-grounded NL reasoning: verify conclusion validity given premises with FOL annotations",
+      "fields": ["story_id", "premises", "premises-FOL", "conclusion", "conclusion-FOL", "label", "example_id"],
+      "label_values": ["True", "False", "Unknown"],
+      "gold_fol_field": "premises-FOL",
+      "files": {
+        "train": "temp/datasets/full_tasksource_folio_default_train.json",
+        "validation": "temp/datasets/full_tasksource_folio_default_validation.json"
+      },
+      "row_counts": {
+        "train": 1001,
+        "validation": 203
+      },
+      "size_mb": {
+        "train": 1.0,
+        "validation": 0.2
+      },
+      "notes": "1430 examples total with gold FOL annotations for both premises and conclusion. Each record has NL premises + FOL translations, making it ideal for text-to-FOL evaluation. FOL correctness verified by an FOL inference engine. GPT-4 still struggles on a subset."
+    }
+  ],
+  "summary": {
+    "total_rows": 121204,
+    "total_size_mb": 95.1,
+    "primary_datasets_for_experiment": ["tasksource/ruletaker", "tasksource/proofwriter", "tasksource/folio"],
+    "best_for_proof_traces": "tasksource/proofwriter (allProofs field with step-by-step proof references)",
+    "best_for_fol_annotations": "tasksource/folio (premises-FOL and conclusion-FOL fields)",
+    "best_for_scale": "tasksource/ruletaker (707k examples, multiple reasoning depths)",
+    "datasets_discarded": [
+      "axon-rl/RuleTaker-d5-70k (reformatted as QA, loses structured fields)",
+      "hitachi-nlp/ruletaker (no documentation, same data)",
+      "ariesutiono/entailment-bank-v3 (DatasetGenerationError on load)",
+      "tasksource/clutrr (only sentence1/sentence2/labels, no proof_state or rich fields)",
+      "CLUTRR/v1 (not loadable via HF API)"
+    ]
+  }
+}
